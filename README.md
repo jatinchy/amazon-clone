@@ -1,49 +1,82 @@
-# amazon-clone
-# 🛒 Amazon Clone  
 
-A full-stack **Amazon Clone** web application that replicates core e-commerce functionalities such as product browsing, authentication, cart management, checkout, and payments. Built with modern web technologies for learning and practice.  
+# 🛒 Amazon Clone (MERN Starter)
 
----
-
-## 🚀 Features  
-
-- 🔑 **User Authentication** – Sign up, login, and logout securely  
-- 📦 **Product Listings** – Browse products with images, details, and pricing  
-- 🛍️ **Shopping Cart** – Add, update, or remove items from the cart  
-- 💳 **Checkout & Payments** – Integrated payment gateway (Stripe/PayPal)  
-- 🔎 **Search & Filter** – Find products by name or category  
-- 📱 **Responsive UI** – Works on desktop, tablet, and mobile  
-- ⚡ **Fast & Scalable** – Optimized for performance  
+A minimal **full-stack Amazon Clone** you can run locally or deploy.  
+- **Backend:** Node.js + Express (products API served from local JSON data; DB-ready structure)
+- **Frontend:** Vite + React (product grid, cart with localStorage, checkout placeholder)
+- **No DB required** to start. You can plug in MongoDB later (hooks included).
 
 ---
 
-## 🏗️ Tech Stack  
-
-**Frontend:**  
-- React.js (with Hooks/Context or Redux)  
-- Tailwind CSS / Material-UI for styling  
-
-**Backend:**  
-- Node.js & Express.js  
-- RESTful APIs  
-
-**Database:**  
-- MongoDB (with Mongoose)  
-
-**Other Integrations:**  
-- Stripe / Razorpay for payments  
-- Firebase / JWT for authentication  
-- Cloudinary / AWS S3 for image hosting  
-
----
-
-## 📂 Project Structure  
+## ⚙️ Quick Start
 
 ```bash
-amazon-clone/
-├── client/          # React frontend
-├── server/          # Express backend
-├── models/          # MongoDB models
-├── routes/          # API routes
-├── config/          # DB & API configurations
-└── README.md
+# 1) Backend
+cd server
+npm install
+npm run dev     # http://localhost:5000
+
+# 2) Frontend (in a new terminal)
+cd client
+npm install
+npm run dev     # http://localhost:5173
+```
+
+The React app proxies API calls to the backend during development.
+
+---
+
+## 🧰 Scripts
+
+**Server**
+- `npm run dev` – start backend with nodemon
+- `npm start` – start backend normally
+
+**Client**
+- `npm run dev` – start Vite dev server
+- `npm run build` – production build
+- `npm run preview` – preview production build
+
+---
+
+## 🔐 Environment Variables
+
+Create a `server/.env` (optional for this starter):
+
+```env
+PORT=5000
+NODE_ENV=development
+# Later (if you add DB/Auth):
+# MONGO_URI=your_mongodb_uri
+# JWT_SECRET=supersecret
+```
+
+---
+
+## 🧪 API Endpoints (Starter)
+
+- `GET /api/products` – list all products
+- `GET /api/products/:id` – single product by ID
+
+---
+
+## 📝 Notes
+
+- This starter keeps products in `server/data/products.json` for simplicity.
+- The frontend uses a simple Context for cart management and persists it in `localStorage`.
+- You can replace the mock API with a MongoDB-backed implementation later (structure is ready).
+
+---
+
+## 🧭 Roadmap Ideas
+
+- Real payments (Stripe/Razorpay)
+- Auth (JWT) + protected routes
+- Orders, delivery status, admin dashboard
+- Product search, categories, filters, pagination
+
+---
+
+## 📄 License
+
+MIT
